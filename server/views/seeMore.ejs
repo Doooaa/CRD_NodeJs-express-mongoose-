@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="display: flex ; flex-direction: column; justify-content: center; align-items: center;">
+    <h2>Product Details</h2>
+    <div style="padding: 1rem; border: 1px solid #ddd; max-width: 600px; ">
+        <p><strong>Name:</strong>
+            <%= product.productName %>
+        </p>
+        <p><strong>Price:</strong>
+            <%= product.price %> EGP
+        </p>
+        <p><strong>Stock:</strong>
+            <%= product.stockState %>
+        </p>
+        <p><strong>Coming Soon:</strong>
+            <%= product.comingSoon ? "Yes" : "No" %>
+        </p>
+        <p><strong>Color Name:</strong>
+            <%= product.colorName %>
+        </p>
+        <p><strong>Available Online:</strong>
+            <%= product.isOnline ? "Yes" : "No" %>
+        </p>
+
+        <a href="/">← Back to Products</a>
+    </div>
+</body>
+
+</html>

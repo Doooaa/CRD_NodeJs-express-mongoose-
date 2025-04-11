@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        td,
+        th {
+            padding: 20px;
+            margin: 10px;
+            background-color: rgb(24, 142, 226);
+        }
+        #addProduct{
+            padding: 20px 30px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+        a{
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            padding: 7px 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <a id="addProduct" href="/addProduct">Add Product</a>
+    <table>
+        <tr>
+
+            <th>productId</th>
+            <th>productName</th>
+            <th>price</th>
+            <th>stockState</th>
+            <th>comingSoon</th>
+            <th>colorName</th>
+            <th>isOnline</th>
+            <th>See More</th>
+            <th>Delete</th>
+
+
+        </tr>
+        <tbody>
+            <% for (let product of Allproducts) { %>
+                <tr onclick="GetItemById(product.productId)">
+
+                    <td>
+                        <%= product.productId %>
+                    </td>
+
+                    <td>
+                        <%= product.productName %>
+                    </td>
+                       <td>$<%= product.price %>
+                    </td>
+                    <td>
+                        <%= product.stockState %>
+                    </td>
+
+                    <td>
+                        <%= product.comingSoon ? 'Yes' : 'No' %>
+                    </td>
+
+                    <td>
+                        <%= product.colorName %>
+                    </td>
+
+                    <td>
+                        <%= product.isOnline ? 'Online' : 'Offline' %>
+                    </td>
+                    <td>
+                        <a href="/seeMore/<%= product._id %>">See More</a>
+                        
+                    </td>
+                    <td>
+                       <a href="/delete/<%=product._id%>">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+
+
+        </tbody>
+
+    </table>
+    <script>
+
+        // let seeMore = document.getElementsByClassName("seeMore");
+        // let deleteItem = document.getElementsByClassName("delete");
+          
+        // seeMore.addEventListener('click',()=>{
+                  
+        // });
+        // GetItemById(id)
+        // {
+
+        // }
+    </script>
+</body>
+
+</html>

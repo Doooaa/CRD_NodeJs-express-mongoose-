@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(24, 142, 226);
+            height: 100vh;
+        }
+
+        form {
+            width: 30%;
+            background-color: black;
+            padding: 30px;
+
+        }
+
+        input,
+        button {
+            padding: 10px 130px;
+            margin: 10px;
+
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgb(24, 142, 226);
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="" method="post">
+            <input type="text" name="productName" placeholder="name">
+            <input type="number" name="price" placeholder="price">
+            <input type="text" name="stockState" placeholder="stockStatet">
+            <input type="text" name="comingSoon" placeholder="comingSoont">
+            <input type="text" name="colorName" placeholder="colorName">
+            <button type="submit" [disabled]="!form.form.valid">
+                Save
+
+
+
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
